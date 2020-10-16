@@ -5128,6 +5128,7 @@
     }
     searchBar.addEventListener('input', search);
     function searchMatches(needle, haystack) {
+      if (needle === '') return true;
       for (var word of needle.split(' ')) {
         if (haystack.indexOf(normalizeName(word)) < 0) {
           return false;
