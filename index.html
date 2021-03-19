@@ -24,34 +24,24 @@
       margin: 0;
     }
     header {
-      text-align: center;
       border-bottom: 1px solid #eee;
       margin-bottom: 20px;
       overflow: hidden;
       padding: 20px 0;
       height: 60px;
+      display: flex;
     }
     header h1 {
       font-size: 21px;
       font-weight: 400;
+      flex: 1;
     }
     .search-bar {
       border: none;
       text-align: center;
-      width: 80%;
+      width: 200px;
       outline: none;
       font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-size: 21px;
-      font-weight: 400;
-      margin-top: 0.67em;
-      margin-bottom: 0.67em;
-      display: none;
-    }
-    header.searching h1 {
-      display: none;
-    }
-    header.searching input.search-bar {
-      display: inline-block;
     }
     .content .hidden {
       display: none;
@@ -5104,19 +5094,7 @@
       icons[i].addEventListener('click', showPreview);
       searchMap[normalizeName(icons[i].textContent)] = icons[i].parentElement;
     }
-    var headerTitle = document.querySelector('header h1');
     var searchBar = document.querySelector('header .search-bar');
-    function showSearchBar(e) {
-      e.target.parentElement.classList.add('searching');
-      searchBar.focus();
-    }
-    headerTitle.addEventListener('click', showSearchBar);
-    function hideSearchBar(e) {
-      if (e.target.value === '') {
-        e.target.parentElement.classList.remove('searching');
-      }
-    }
-    searchBar.addEventListener('focusout', hideSearchBar);
     function search(e) {
       for (var name in searchMap) {
         if (searchMatches(e.target.value, name)) {
