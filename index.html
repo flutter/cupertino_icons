@@ -30,6 +30,7 @@
       padding: 20px 0;
       height: 60px;
       display: flex;
+      align-items: center;
     }
     header h1 {
       font-size: 21px;
@@ -37,11 +38,23 @@
       flex: 1;
     }
     .search-bar {
-      border: none;
-      text-align: center;
+      position: relative;
+      flex-direction: row;
+      align-items: center;
+    }
+    .search-bar>i {
+      position: absolute;
+      left: 7px;
+      top: 6px;
+      font-size: 22px;
+    }
+    .search-bar>input {
       width: 200px;
       outline: none;
       font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 3px 5px 3px 30px;
     }
     .content .hidden {
       display: none;
@@ -159,7 +172,10 @@
   <div class="center">
     <header>
       <h1>Cupertino Icons 1.0.0 Gallery</h1>
-      <input class="search-bar" placeholder="Search..." />
+      <div class="search-bar">
+        <i class="cupertino-icons">search</i>
+        <input placeholder="Search..." />
+      </div>
     </header>
     <div class="content">
       <div class="icons">
