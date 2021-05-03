@@ -1,3 +1,10 @@
+# Moved
+
+This repository is no longer used. The `cupertino_icons` package has moved to
+[flutter/packages](https://github.com/flutter/packages/tree/master/third_party/packages/cupertino_icons).
+
+---
+
 # Cupertino Icons
 
 This is an asset repo containing the default set of icon assets used by
